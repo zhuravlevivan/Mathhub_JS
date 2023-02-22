@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: lightgray;
+    height: 50px;
+}
+
+
+
+nav {
+    /* width: max-content; */
+    height: inherit;
+    display: flex;
+    /* justify-content: start; */
+    align-items: center;
+    justify-content: center;
+}
+
+nav > a {
+    text-decoration: none;
+    color: black;
+    padding: 0 30px;
+    font-size: 15px;
+}
+
+.about_us {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row-reverse; */
+}
+
+.about_us img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: top;
+}
+
+.my_game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.my_game > * {
+    text-align: center;
+}
+
+.my_game input, .my_gamem, button {
+    border: none;
+    background-color: rgb(205, 201, 201);
+    margin: 5px;
+    min-height: 30px;
+
+}
+
+.my_game button {
+    width: max-content;
+    background-color: rgb(70, 173, 139);
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.my_game input {
+    background-color: beige;
+    outline: none;
+}
+
+.choosed_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choosed_block-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 650px;
+}
+
+.choosed_block-container > div {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(121, 178, 180);
+    align-items: center;
+    
+}
+
+.choosed_element {
+    border: 3px solid black;
+}
+
+
+
+
+.about_us_description {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.about_us_description {
+    padding: 5px;
+    
+}
+
