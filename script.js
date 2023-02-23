@@ -103,7 +103,7 @@ const getRundomNumInRange = (min, max) => {
 }
 
 const getTask = () => {
-   
+
     const symbol = (Math.random() > 0.5) ? "+" : "-";
 
     const task = `${getRundomNumInRange(0, 100)} ${symbol} ${getRundomNumInRange(0, 100)}`
@@ -173,7 +173,7 @@ const changeCount = (value) => {
 
 const eventFunc = (e) => {
     // choosedEl[i].className = "choosed_element"
-    
+
     if (e.target.className === "") {
         e.target.className = "choosed_element"
         changeCount(1)
@@ -187,7 +187,71 @@ for (let i = 0; i < choosedEl.length; i++) {
     choosedEl[i].addEventListener("click", eventFunc)
 }
 
-choosedEl[2].removeEventListener("click", eventFunc);
+// choosedEl[2].removeEventListener("click", eventFunc);
+
+// const timeIsOver = () => {
+//     alert("Time's up")
+// }
+// setTimeout(timeIsOver, 2000)
+
+// const alarm = setInterval(timeIsOver, 3000)
+// clearInterval(alarm)
 
 
 
+// const alarm = setInterval (() => {
+//     let wantToSleep = confirm("Do you want to sleep?")
+//     if (wantToSleep) {
+//         console.log("tic");
+//     } else {
+//         clearInterval(alarm)
+//     }
+// }, 3000)
+
+
+const postsBlock = document.querySelector(".posts_block-container")
+const showPostsBTN = document.querySelector(".posts_block button")
+
+
+function getPosts() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(data => {
+        for (el of data) {
+            addPost(el.title, el.body)
+        }
+    })
+    .catch((err) => (err.message))
+
+function addPost(title, body) {
+    const postTitle = document.createElement("h3")
+    const postBody = document.createElement("span")
+    const postItem = document.createElement("p")
+
+    postTitle.innerText = title
+    postBody.innerText = body
+
+    postItem.append(postTitle, postBody)
+    postsBlock.append(postItem)
+}
+}
+
+// function createPost(title, body, userId) {
+//     fetch("https://jsonplaceholder.typicode.com/posts", {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             title: title,
+//             body: body,
+//             userId: userId,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8'
+//         },
+//     })
+//         .then(res => console.log(res))
+//         .catch((err) => (err.message))
+// }
+
+// createPost("title", "body", 15)
+
+showPostsBTN.onclick = getPosts
