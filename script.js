@@ -254,4 +254,6 @@ function addPost(title, body) {
 
 // createPost("title", "body", 15)
 
-showPostsBTN.onclick = getPosts
+// showPostsBTN.onclick = getPosts
+
+getPosts()
